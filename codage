@@ -23,6 +23,7 @@ pos = Label(Frame2, bg='#385887', fg='#242424', text="Avez vous déjà un compte
 ye1 = Button(Frame2, bg='#385887', fg='#242424', text="Oui", font=("helvetica", 50), command=Frame2.destroy)
 no1 = Button(Frame2, bg='#385887', fg='#242424', text="Non", font=("helvetica", 50), command=lambda:[Frame2.destroy(),new_iden.pack(),Frame3.pack(expand=YES)])
 
+n_iden = Label(Frame2, bg='#385887', fg='#242424', text="Identifiant", font=("helvetica", 20))
 new_iden = Text(Frame3, font=("Helvetica", 20), text="Identifiant", bg='white', fg='#242424')
 new_nom = Text(Frame3, font=("Helvetica", 20), text="Nom et Prénom", bg='white', fg='#242424')
 new_date = Text(Frame3, font=("Helvetica", 20), text="Date de naissance (JJ/MM/AAAA)", bg='white', fg='#242424')
