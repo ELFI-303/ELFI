@@ -1,31 +1,34 @@
-
 from tkinter import *
-
 
 master = Tk()
 master.config(bg='#385887')
 master.title("BCS")
 master.iconbitmap("img\logo.ico")
 master.attributes('-fullscreen',True)
+
 w, h = master.winfo_screenwidth(), master.winfo_screenheight()
+
 Frame1 = Frame(master, width=w, height=h, bg='#385887')
 Frame2 = Frame(master, width=w, height=h, bg='#385887')
 Frame3 = Frame(master, width=w, height=h, bg='#385887')
 
 Frame1.pack(expand=YES)
 
-
-
 veille = PhotoImage(file="img\\veille1.png")
 start = Button(Frame1, image=veille, bg='#385887', relief="flat", borderwidth=0, activebackground='#385887',
                overrelief="flat", command=lambda:[Frame1.destroy(), pos.pack(side=LEFT),
                                                   no1.pack(side=RIGHT), ye1.pack(side=RIGHT), Frame2.pack(expand=YES)])
-new_iden = Text(Frame3, font=("Helvetica", 30), bg='white', fg='#242424')
+                                                  
 pos = Label(Frame2, bg='#385887', fg='#242424', text="Avez vous déjà un compte BCS?", font=("helvetica", 50))
 ye1 = Button(Frame2, bg='#385887', fg='#242424', text="Oui", font=("helvetica", 50), command=Frame2.destroy)
 no1 = Button(Frame2, bg='#385887', fg='#242424', text="Non", font=("helvetica", 50), command=lambda:[Frame2.destroy(),new_iden.pack(),Frame3.pack(expand=YES)])
+
+new_iden = Text(Frame3, font=("Helvetica", 20), text="Identifiant", bg='white', fg='#242424')
+new_nom = Text(Frame3, font=("Helvetica", 20), text="Nom et Prénom", bg='white', fg='#242424')
+new_date = Text(Frame3, font=("Helvetica", 20), text="Date de naissance (JJ/MM/AAAA)", bg='white', fg='#242424')
+new_mail = Text(Frame3, font=("Helvetica", 20), text="E-mail", bg='white', fg='#242424')
+new_tel = Text(Frame3, font=("Helvetica", 20), text="N° de téléphone", bg='white', fg='#242424')
+
 start.pack()
-
-
 
 master.mainloop()
