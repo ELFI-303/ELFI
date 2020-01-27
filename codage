@@ -1,0 +1,24 @@
+
+from tkinter import *
+
+master = Tk()
+master.config(bg='black')
+master.title("BCS")
+master.iconbitmap("img\logo.ico")
+w, h = master.winfo_screenwidth(), master.winfo_screenheight()
+Frame = Frame(master, width=w, height=h, bg='#385887')
+
+veille = PhotoImage(file="img\\veille1.png")
+start = Button(Frame, image=veille, bg='#385887', relief="flat", borderwidth=0, activebackground='#385887', overrelief="flat")
+start['command'] = lambda b=start : b.pack_forget()
+start.pack()
+
+pos = Label(Frame, bg='#385887', fg='white', text="Avez vous déjà un compte BCS?")
+ye1 =
+no1
+pos.pack(side=LEFT)
+
+
+Frame.pack(expand=YES)
+
+master.mainloop()
