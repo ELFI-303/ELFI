@@ -1,24 +1,31 @@
 
 from tkinter import *
 
+
 master = Tk()
-master.config(bg='black')
+master.config(bg='#385887')
 master.title("BCS")
 master.iconbitmap("img\logo.ico")
+master.attributes('-fullscreen',True)
 w, h = master.winfo_screenwidth(), master.winfo_screenheight()
-Frame = Frame(master, width=w, height=h, bg='#385887')
+Frame1 = Frame(master, width=w, height=h, bg='#385887')
+Frame2 = Frame(master, width=w, height=h, bg='#385887')
+Frame3 = Frame(master, width=w, height=h, bg='#385887')
+
+Frame1.pack(expand=YES)
+
+
 
 veille = PhotoImage(file="img\\veille1.png")
-start = Button(Frame, image=veille, bg='#385887', relief="flat", borderwidth=0, activebackground='#385887', overrelief="flat")
-start['command'] = lambda b=start : b.pack_forget()
+start = Button(Frame1, image=veille, bg='#385887', relief="flat", borderwidth=0, activebackground='#385887',
+               overrelief="flat", command=lambda:[Frame1.destroy(), pos.pack(side=LEFT),
+                                                  no1.pack(side=RIGHT), ye1.pack(side=RIGHT), Frame2.pack(expand=YES)])
+new_iden = Text(Frame3, font=("Helvetica", 30), bg='white', fg='#242424')
+pos = Label(Frame2, bg='#385887', fg='#242424', text="Avez vous déjà un compte BCS?", font=("helvetica", 50))
+ye1 = Button(Frame2, bg='#385887', fg='#242424', text="Oui", font=("helvetica", 50), command=Frame2.destroy)
+no1 = Button(Frame2, bg='#385887', fg='#242424', text="Non", font=("helvetica", 50), command=lambda:[Frame2.destroy(),new_iden.pack(),Frame3.pack(expand=YES)])
 start.pack()
 
-pos = Label(Frame, bg='#385887', fg='white', text="Avez vous déjà un compte BCS?")
-ye1 =
-no1
-pos.pack(side=LEFT)
 
-
-Frame.pack(expand=YES)
 
 master.mainloop()
